@@ -3,7 +3,7 @@ const port = 9000;
 
 const app = express();
 
-
+app.use('/',require('./routes'));
 
 
 
