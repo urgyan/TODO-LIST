@@ -4,9 +4,98 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/main.css">
+
 </head>
 <body>
-    
+    <h1>ToDO App</h1>
+     <!-- making a container for whole UI -->
+     <div id = "main-div">
+
+        <form action = "/add-todo" method="post" >
+
+            <!-- DISCRIPTION PART -->
+
+            <div id = "description">
+
+                <span class ="header">DESCRIPTION</span>
+                <input type ="text" name ="description" placeholder="write your task" required>
+
+            </div>
+            <!-- CONTAINER FOR CATEGORY AND DATE -->
+            <div id="cat-date">
+                <!-- CONTAINER FOR CATEGORY -->
+
+                <div class="dropdown">
+                    <p class="header">Category</p>
+                    <select class="header" id = "myList" name="selectpicker">
+                        <option>Choose a Category</option>
+                        <option>school</option>
+                        <option >college</option>
+                        <option >workout</option>
+                        <option >homework</option>
+                        <option >music classes</option>
+                    </select>
+
+                </div>
+
+                <!-- CONTAINER FOR DATE -->
+            <div id="date">
+                <p class="header"> DUE DATE</p>
+                <input type="date" id="due_date" name="due_date" required> 
+
+            </div>
+            </div>
+
+            <!-- ACTION BUTTON FOR ADD AND DELETE -->
+
+            <div class="action-button">
+                <button class="advance-button" id="add">
+                    <span>ADD TASK</span>
+                    <i class="fas fa-lg fa-plus"></i>
+                </button>
+
+                <button class="advance-button" id="delete">
+                    <span> Delete task</span>
+                    <i class="fas fa-lg fa-trash-alt"></i>
+                </button>
+
+            </div>
+
+        </form>
+
+        <!-- todo list items -->
+        <form action="/delete-todo" method="post">
+            <div id="list-of-task">
+                <ul>
+                    <% for(let i of todo ){ %>
+                        <li id="task-item">
+                            <div id ="left-part">
+                                <input type ="checkbox" name="<%= i._id%>">
+                                <lable><%i=i.description%></lable>
+                                <div id="date-display">
+                                    <i class="fas   fa-calendar-week"></i>
+                                    <p><%=i.due_date%></p>
+                                </div>
+
+                            </div>
+                            <div id="right-part" class="category-color">
+                                <p><%= i.selectpicker %></p>
+                            </div>
+
+
+
+                        </li>
+
+                   <% } %>
+                </ul>
+
+            </div>
+
+        </form>
+
+     </div>
 </body>
 </html>

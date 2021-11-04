@@ -1,0 +1,217 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-image:url("../images/Cloudy.svg");
+}
+
+.header{
+    color: gray;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: smaller;
+    padding: 5px;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(253, 253, 253);
+}
+
+/* MAIN CONTAINER FOR HANDLING THE WHOLE HTML DOCUMENT  */
+#main-div{
+    width: 600px;
+    margin: 0 auto;
+    border-radius: 9px;
+    background: #EFEEEE;
+    box-shadow:  4px 7px 15px #9b9b9b,
+            
+    
+}
+
+/*  for  discription  */
+#description{
+    
+    width: 100%;
+}
+
+#description>input{
+
+    padding: 4px;
+    height: 65px;
+    width: 100%;
+    border: none;
+    outline: none;
+
+}
+/* category and due date */
+
+#cat-date{
+    display:flex;
+    width: 100%;
+}
+
+.dropdown {
+    width: 50%;
+    border: 1px solid rgb(255, 255, 255);
+    display: inline-block;
+}
+
+#myList{
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+
+
+#date{
+    border: 1px solid rgb(255, 255, 255);
+    width: 50%;
+}
+
+#date>input{
+    width: 100%;
+    font-size: 12px;
+    font-weight: 390;
+    padding: 4px;
+    border: none;
+    text-align: center;
+    outline: none;
+}
+
+/* ACTION BUTTON  */
+
+.action-button{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 27px;
+}
+.action-button button{
+    height: 55px;
+    width: 145px;
+    cursor: pointer;
+}
+.action-button span{
+    color: rgb(34, 16, 16);
+    font-size: 0.9rem;
+    font-family:"Lucida Console",  monospace;
+    font-weight: 500;
+}
+
+.action-button i{
+    color: white;
+}
+ 
+/* todo list  */
+#task-item{
+    
+    display: flex;
+    border-top: 1px solid grey;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+/* left side */
+
+#left-part > input{
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+#left-part > label{
+    padding: 10px;
+    position: relative;
+    top: -5px;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+}
+
+/* duedate */
+#date-display p{
+    display: inline-block;
+    position: relative;
+    left:50px;
+    top: -2px;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+#date-display i{
+    display: inline-block;
+    position: relative;
+    left:43px;
+    color: grey;
+
+}
+
+/* PSEUDO CLASSES FOR LEFT PART OF LIST */
+
+
+
+
+/* RIGHT PART OF THE LIST ITEM */
+#right-part{
+    background-color: red;
+    height: 50px;
+    width: 100px;
+    border-radius: 4px 4px 4px 4px;
+}
+
+#right-part > p{
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    
+}
+
+/* ADVANCE BUTTON */
+
+.advance-button {
+    width: 150px;
+    height: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.0);
+    border-radius: 12.5px;
+    background: #abe3e9;
+    box-shadow: 2px 0px 15px #ada0a0;
+    margin-left: 5px;
+}
+   
+.advance-button:active {
+box-shadow: 16px 16px 18px #aaaaaa inset,
+            
+}
+
+
+
+/*scroll bar for  list */
+ul{
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+/* MEDIA QUERY FOR MOBILE DEVICE */
+
+@media  (max-width:600px) {
+    #task-item{
+        width: 75%;
+    }
+
+    
+
+    #description{
+        width: 79%;
+    }
+
+    #cat-date{
+        width: 79%;
+    }
+}
+
+
